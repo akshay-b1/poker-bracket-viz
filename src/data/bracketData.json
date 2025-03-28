@@ -1,0 +1,57 @@
+{
+    "region": "South",
+    "rounds": [
+      {
+        "matchups": [
+          { "team1": { "name": "Auburn", "seed": 1 }, "team2": { "name": "Delaware", "seed": 32 }, "winner": 0 },
+          { "team1": { "name": "Miami", "seed": 16 }, "team2": { "name": "Drake", "seed": 17 }, "winner": 1 },
+          { "team1": { "name": "Indiana", "seed": 8 }, "team2": { "name": "UC Irvine", "seed": 25 }, "winner": 0 },
+          { "team1": { "name": "Iowa", "seed": 9 }, "team2": { "name": "Toledo", "seed": 24 }, "winner": 0 },
+          { "team1": { "name": "Michigan", "seed": 5 }, "team2": { "name": "Florida", "seed": 28 }, "winner": 0 },
+          { "team1": { "name": "Texas A&M", "seed": 12 }, "team2": { "name": "Boise State", "seed": 21 }, "winner": 0 },
+          { "team1": { "name": "Creighton", "seed": 4 }, "team2": { "name": "Santa Clara", "seed": 29 }, "winner": 0 },
+          { "team1": { "name": "Memphis", "seed": 13 }, "team2": { "name": "UCF", "seed": 20 }, "winner": 1 },
+          { "team1": { "name": "Duke", "seed": 2 }, "team2": { "name": "Vermont", "seed": 31 }, "winner": 0 },
+          { "team1": { "name": "Arizona St", "seed": 15 }, "team2": { "name": "Penn State", "seed": 18 }, "winner": 1 },
+          { "team1": { "name": "Texas", "seed": 7 }, "team2": { "name": "VCU", "seed": 26 }, "winner": 0 },
+          { "team1": { "name": "Missouri", "seed": 10 }, "team2": { "name": "Rutgers", "seed": 23 }, "winner": 1 },
+          { "team1": { "name": "Illinois", "seed": 6 }, "team2": { "name": "Syracuse", "seed": 27 }, "winner": 0 },
+          { "team1": { "name": "Oregon", "seed": 11 }, "team2": { "name": "Nevada", "seed": 22 }, "winner": 1 },
+          { "team1": { "name": "Kentucky", "seed": 3 }, "team2": { "name": "Montana", "seed": 30 }, "winner": 0 },
+          { "team1": { "name": "Ole Miss", "seed": 14 }, "team2": { "name": "New Mexico", "seed": 19 }, "winner": 1 }
+        ]
+      },
+      {
+        "matchups": [
+          { "team1": { "name": "Auburn", "seed": 1 }, "team2": { "name": "Drake", "seed": 17 }, "winner": 0 },
+          { "team1": { "name": "Indiana", "seed": 8 }, "team2": { "name": "Iowa", "seed": 9 }, "winner": 1 },
+          { "team1": { "name": "Michigan", "seed": 5 }, "team2": { "name": "Texas A&M", "seed": 12 }, "winner": 0 },
+          { "team1": { "name": "Creighton", "seed": 4 }, "team2": { "name": "UCF", "seed": 20 }, "winner": 0 },
+          { "team1": { "name": "Duke", "seed": 2 }, "team2": { "name": "Penn State", "seed": 18 }, "winner": 0 },
+          { "team1": { "name": "Texas", "seed": 7 }, "team2": { "name": "Rutgers", "seed": 23 }, "winner": 1 },
+          { "team1": { "name": "Illinois", "seed": 6 }, "team2": { "name": "Nevada", "seed": 22 }, "winner": 0 },
+          { "team1": { "name": "Kentucky", "seed": 3 }, "team2": { "name": "New Mexico", "seed": 19 }, "winner": 0 }
+        ]
+      },
+      {
+        "matchups": [
+          { "team1": { "name": "Auburn", "seed": 1 }, "team2": { "name": "Iowa", "seed": 9 }, "winner": 0 },
+          { "team1": { "name": "Michigan", "seed": 5 }, "team2": { "name": "Creighton", "seed": 4 }, "winner": 1 },
+          { "team1": { "name": "Duke", "seed": 2 }, "team2": { "name": "Rutgers", "seed": 23 }, "winner": 0 },
+          { "team1": { "name": "Illinois", "seed": 6 }, "team2": { "name": "Kentucky", "seed": 3 }, "winner": 1 }
+        ]
+      },
+      {
+        "matchups": [
+          { "team1": { "name": "Auburn", "seed": 1 }, "team2": { "name": "Creighton", "seed": 4 }, "winner": 0 },
+          { "team1": { "name": "Duke", "seed": 2 }, "team2": { "name": "Kentucky", "seed": 3 }, "winner": 1 }
+        ]
+      },
+      {
+        "matchups": [
+          { "team1": { "name": "Auburn", "seed": 1 }, "team2": { "name": "Kentucky", "seed": 3 }, "winner": 1 }
+        ]
+      }
+    ]
+  }
+  
