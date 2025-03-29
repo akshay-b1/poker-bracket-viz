@@ -145,7 +145,7 @@ const Bracket = ({ data }) => {
             <div
               key={roundIndex}
               className="relative flex flex-col"
-              style={{ marginTop: roundOffset }}
+              style={{ marginTop: `${roundIndex == 0 ? 0 : roundOffset}`, left: `${roundIndex * 100}px` }}
             >
               <div className="text-center mb-6 font-medium">
                 <span className="px-4 py-1.5 rounded-full bg-emerald-800/50 text-yellow-300 text-sm uppercase tracking-wider backdrop-blur-sm border border-emerald-700/30">
@@ -157,37 +157,47 @@ const Bracket = ({ data }) => {
                 </span>
               </div>
               {showRound &&
-                round.matchups.map((matchup, matchupIndex) => {
-                  const key = `${roundIndex}-${matchupIndex}`;
-                  const isPlayed = played[key];
-                  const isAnimating = animating[key];
+  round.matchups.map((matchup, matchupIndex) => {
+    const key = `${roundIndex}-${matchupIndex}`;
+    const isPlayed = played[key];
+    const isAnimating = animating[key];
 
-                  const topMargin =
-                    matchupIndex === 0
-                      ? matchHeight / 2 - cardHeight / 2
-                      : matchHeight - cardHeight;
+    // matchHeight increases each round to create vertical gaps
+    const matchHeight = cardHeight + verticalSpacing * Math.pow(2, roundIndex);
 
-                  return (
-                    <div
-                      key={matchupIndex}
-                      className="relative"
-                      style={{ marginTop: topMargin }}
-                    >
-                      {/* MATCHUP CARD */}
-                      <div
-                        className={`bg-white/95 backdrop-blur-md border ${
-                          isAnimating
-                            ? "border-yellow-400"
-                            : "border-gray-800/40"
-                        } rounded-xl p-4 w-56 transition-all duration-500 relative group hover:transform hover:scale-[1.02]`}
-                        style={{
-                          boxShadow: isAnimating
-                            ? "0 10px 25px -5px rgba(250, 204, 21, 0.4), 0 8px 10px -6px rgba(0,0,0,0.2)"
-                            : "0 10px 25px -5px rgba(0,0,0,0.2), 0 8px 10px -6px rgba(0,0,0,0.1)",
-                          transition: "all 0.3s ease",
-                        }}
-                      >
-                        <div className="absolute -top-1.5 -left-1.5 w-7 h-7 text-xs font-bold bg-gradient-to-br from-red-500 to-red-700 text-white rounded-full flex items-center justify-center border-2 border-white shadow-md">
+    // For matchup positioning
+    let topMargin;
+
+    if (roundIndex === 0) {
+      // First round — even spacing
+      topMargin = matchupIndex === 0 ? 0 : cardHeight + verticalSpacing;
+    } else {
+      // Later rounds — center between the two source matchups
+      const stepSize = (cardHeight + verticalSpacing) * Math.pow(2, roundIndex);
+      topMargin = stepSize * matchupIndex + stepSize / 2 - cardHeight / 2;
+    }
+    
+    
+
+    return (
+      <div
+  key={matchupIndex}
+  className={`${roundIndex === 0 ? "relative" : "absolute"}`}
+  style={{
+    top: `${roundIndex === 0 ? 0 : (cardHeight + verticalSpacing) * (matchupIndex * Math.pow(2, roundIndex)) + (cardHeight + verticalSpacing) * (Math.pow(2, roundIndex - 1) - 0.5) - (roundIndex * roundIndex * 30)}px`,
+  }}
+>
+
+        <div
+          className={`bg-white border-2 ${
+            isAnimating ? "border-yellow-400" : "border-gray-800"
+          } rounded-lg p-3 w-52 shadow-lg transition-all duration-500 relative`}
+          style={{
+            boxShadow: "0 4px 8px rgba(0,0,0,0.4)",
+          }}
+        >
+
+                        <div className="absolute -top-1 -left-1 w-6 h-6 text-xs font-bold bg-red-600 text-white rounded-full flex items-center justify-center border border-white">
                           {matchupIndex + 1}
                         </div>
                         <div className="absolute -top-1.5 -right-1.5 w-7 h-7 text-xs font-bold bg-black text-white rounded-full flex items-center justify-center border-2 border-white shadow-md">
@@ -213,19 +223,11 @@ const Bracket = ({ data }) => {
                               >
                                 {team.seed}
                               </span>
-                              <span
-                                className={
-                                  isPlayed && i === matchup.winner
-                                    ? "font-medium"
-                                    : ""
-                                }
-                              >
-                                {team.name}
-                              </span>
+                              {team.name} 
                             </span>
                             {isPlayed && i === matchup.winner && (
-                              <span className="text-yellow-500 font-bold text-sm">
-                                ♦
+                              <span className="text-yellow-600 font-bold text-sm">
+                                {team?.money} ♦ 
                               </span>
                             )}
                           </div>
