@@ -3,7 +3,7 @@
     "rounds": [
       {
         "matchups": [
-          { "team1": { "name": "Auburn", "seed": 1 }, "team2": { "name": "Delaware", "seed": 32 }, "winner": 0 },
+          { "team1": { "name": "Auburn", "seed": 1, "money": "+100" }, "team2": { "name": "Delaware", "seed": 32, "money": "-100" }, "winner": 0 },
           { "team1": { "name": "Miami", "seed": 16 }, "team2": { "name": "Drake", "seed": 17 }, "winner": 1 },
           { "team1": { "name": "Indiana", "seed": 8 }, "team2": { "name": "UC Irvine", "seed": 25 }, "winner": 0 },
           { "team1": { "name": "Iowa", "seed": 9 }, "team2": { "name": "Toledo", "seed": 24 }, "winner": 0 },
