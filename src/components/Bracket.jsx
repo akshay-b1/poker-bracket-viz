@@ -8,12 +8,13 @@ const CardShuffleAnimation = () => {
         {["♠", "♥", "♦", "♣"].map((suit, i) => (
           <div
             key={i}
-            className="absolute w-6 h-8 bg-white border border-gray-300 rounded shadow-sm flex items-center justify-center text-lg"
+            className="absolute w-6 h-8 bg-white border border-gray-200 rounded shadow-sm flex items-center justify-center text-lg"
             style={{
               left: `${i * 6}px`,
               zIndex: i,
-              animation: `shuffle-${i} 0.7s infinite`,
-              color: i % 2 === 0 ? "black" : "red",
+              animation: `shuffle-${i} 0.8s infinite ease-in-out`,
+              color: i % 2 === 0 ? "#1a1a1a" : "#e53e3e",
+              boxShadow: "0 2px 10px rgba(0,0,0,0.08)",
             }}
           >
             {suit}
@@ -27,7 +28,7 @@ const CardShuffleAnimation = () => {
             transform: translateY(0) rotate(0deg);
           }
           25% {
-            transform: translateY(-8px) rotate(-5deg);
+            transform: translateY(-10px) rotate(-3deg);
           }
           50% {
             transform: translateY(0) rotate(0deg);
@@ -38,10 +39,10 @@ const CardShuffleAnimation = () => {
           100% {
             transform: translateY(0) rotate(0deg);
           }
-          25% {
-            transform: translateY(-5px) rotate(5deg);
+          30% {
+            transform: translateY(-7px) rotate(3deg);
           }
-          50% {
+          60% {
             transform: translateY(0) rotate(0deg);
           }
         }
@@ -50,11 +51,11 @@ const CardShuffleAnimation = () => {
           100% {
             transform: translateY(0) rotate(0deg);
           }
-          25% {
-            transform: translateY(-8px) rotate(-5deg);
+          35% {
+            transform: translateY(-9px) rotate(-2deg);
           }
-          75% {
-            transform: translateY(-5px) rotate(5deg);
+          65% {
+            transform: translateY(-4px) rotate(2deg);
           }
         }
         @keyframes shuffle-3 {
@@ -62,10 +63,10 @@ const CardShuffleAnimation = () => {
           100% {
             transform: translateY(0) rotate(0deg);
           }
-          50% {
-            transform: translateY(-8px) rotate(5deg);
+          40% {
+            transform: translateY(-8px) rotate(3deg);
           }
-          75% {
+          70% {
             transform: translateY(0) rotate(0deg);
           }
         }
@@ -121,18 +122,19 @@ const Bracket = ({ data }) => {
 
   return (
     <div
-      className="bg-emerald-800 text-white min-h-screen p-6 font-serif overflow-x-auto"
+      className="bg-emerald-900 text-white min-h-screen p-8 font-sans overflow-x-auto"
       style={{
         backgroundImage:
-          "linear-gradient(rgba(0, 80, 40, 0.7) 1px, transparent 1px), linear-gradient(90deg, rgba(0, 80, 40, 0.7) 1px, transparent 1px)",
-        backgroundSize: "20px 20px",
+          "radial-gradient(circle at center, rgba(16, 85, 60, 0.7) 0%, rgba(6, 40, 30, 0.95) 100%)",
       }}
     >
-      <h1 className="text-4xl font-bold mb-6 text-yellow-400 text-center tracking-wider">
-        Build4Good PokerBot Challenge
+      <h1 className="text-4xl font-extrabold mb-10 text-center tracking-wide">
+        <span className="bg-gradient-to-r from-yellow-300 to-yellow-500 text-transparent bg-clip-text">
+          Build4Good PokerBot Challenge
+        </span>
       </h1>
 
-      <div className="flex space-x-16 relative items-start">
+      <div className="flex space-x-20 relative items-start px-6">
         {data.rounds.map((round, roundIndex) => {
           const showRound = roundReady(roundIndex);
           const matchHeight =
@@ -145,12 +147,14 @@ const Bracket = ({ data }) => {
               className="relative flex flex-col"
               style={{ marginTop: roundOffset }}
             >
-              <div className="text-center mb-4 text-yellow-300 font-bold">
-                {roundIndex === 0
-                  ? "First Round"
-                  : roundIndex === data.rounds.length - 1
-                  ? "Finals"
-                  : `Round ${roundIndex + 1}`}
+              <div className="text-center mb-6 font-medium">
+                <span className="px-4 py-1.5 rounded-full bg-emerald-800/50 text-yellow-300 text-sm uppercase tracking-wider backdrop-blur-sm border border-emerald-700/30">
+                  {roundIndex === 0
+                    ? "First Round"
+                    : roundIndex === data.rounds.length - 1
+                    ? "Finals"
+                    : `Round ${roundIndex + 1}`}
+                </span>
               </div>
               {showRound &&
                 round.matchups.map((matchup, matchupIndex) => {
@@ -171,35 +175,56 @@ const Bracket = ({ data }) => {
                     >
                       {/* MATCHUP CARD */}
                       <div
-                        className={`bg-white border-2 ${
-                          isAnimating ? "border-yellow-400" : "border-gray-800"
-                        } rounded-lg p-3 w-52 shadow-lg transition-all duration-500 relative`}
-                        style={{ boxShadow: "0 4px 8px rgba(0,0,0,0.4)" }}
+                        className={`bg-white/95 backdrop-blur-md border ${
+                          isAnimating
+                            ? "border-yellow-400"
+                            : "border-gray-800/40"
+                        } rounded-xl p-4 w-56 transition-all duration-500 relative group hover:transform hover:scale-[1.02]`}
+                        style={{
+                          boxShadow: isAnimating
+                            ? "0 10px 25px -5px rgba(250, 204, 21, 0.4), 0 8px 10px -6px rgba(0,0,0,0.2)"
+                            : "0 10px 25px -5px rgba(0,0,0,0.2), 0 8px 10px -6px rgba(0,0,0,0.1)",
+                          transition: "all 0.3s ease",
+                        }}
                       >
-                        <div className="absolute -top-1 -left-1 w-6 h-6 text-xs font-bold bg-red-600 text-white rounded-full flex items-center justify-center border border-white">
+                        <div className="absolute -top-1.5 -left-1.5 w-7 h-7 text-xs font-bold bg-gradient-to-br from-red-500 to-red-700 text-white rounded-full flex items-center justify-center border-2 border-white shadow-md">
                           {matchupIndex + 1}
                         </div>
-                        <div className="absolute -top-1 -right-1 w-6 h-6 text-xs font-bold bg-black text-white rounded-full flex items-center justify-center border border-white">
+                        <div className="absolute -top-1.5 -right-1.5 w-7 h-7 text-xs font-bold bg-black text-white rounded-full flex items-center justify-center border-2 border-white shadow-md">
                           ♠
                         </div>
 
                         {[matchup.team1, matchup.team2].map((team, i) => (
                           <div
                             key={i}
-                            className={`flex justify-between items-center px-2 py-1 my-1 rounded-md border ${
+                            className={`flex justify-between items-center px-3 py-2 my-1.5 rounded-lg border transition-all duration-300 ${
                               isPlayed && i === matchup.winner
-                                ? "bg-yellow-100 border-yellow-500 text-black font-bold"
-                                : "border-gray-300 text-gray-800"
+                                ? "bg-gradient-to-r from-yellow-50 to-yellow-100 border-yellow-400 text-gray-800 font-medium shadow-inner"
+                                : "border-gray-200 text-gray-700 hover:border-gray-300"
                             }`}
                           >
                             <span className="text-sm">
-                              <span className="font-bold mr-1 text-red-600">
+                              <span
+                                className={`font-bold mr-1.5 ${
+                                  isPlayed && i === matchup.winner
+                                    ? "text-red-600"
+                                    : "text-red-500"
+                                }`}
+                              >
                                 {team.seed}
                               </span>
-                              {team.name}
+                              <span
+                                className={
+                                  isPlayed && i === matchup.winner
+                                    ? "font-medium"
+                                    : ""
+                                }
+                              >
+                                {team.name}
+                              </span>
                             </span>
                             {isPlayed && i === matchup.winner && (
-                              <span className="text-yellow-600 font-bold text-sm">
+                              <span className="text-yellow-500 font-bold text-sm">
                                 ♦
                               </span>
                             )}
@@ -207,11 +232,11 @@ const Bracket = ({ data }) => {
                         ))}
 
                         {!isPlayed && (
-                          <div className="flex justify-center mt-3">
+                          <div className="flex justify-center mt-3.5">
                             {isAnimating ? (
                               <div className="h-8 flex items-center justify-center">
                                 <CardShuffleAnimation />
-                                <div className="text-xs text-gray-600 ml-2 animate-pulse">
+                                <div className="text-xs text-gray-600 ml-2 animate-pulse font-medium">
                                   Dealing...
                                 </div>
                               </div>
@@ -220,7 +245,7 @@ const Bracket = ({ data }) => {
                                 onClick={() =>
                                   handlePlay(roundIndex, matchupIndex)
                                 }
-                                className="text-sm bg-red-700 text-white px-4 py-1 rounded-md hover:bg-red-800 flex items-center gap-1 shadow-md"
+                                className="text-sm bg-gradient-to-b from-red-600 to-red-700 text-white px-5 py-1.5 rounded-lg flex items-center gap-1.5 shadow-lg shadow-red-900/20 hover:from-red-700 hover:to-red-800 transition-all duration-200"
                               >
                                 <PlayIcon className="w-4 h-4" />
                                 Deal
@@ -239,45 +264,91 @@ const Bracket = ({ data }) => {
 
       {/* Winner Popup */}
       {winnerPopup && (
-        <div className="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50">
+        <div className="fixed inset-0 bg-black/80 backdrop-blur-sm flex items-center justify-center z-50">
           <div
-            className="bg-white border-4 border-yellow-500 rounded-lg p-8 max-w-md text-center shadow-2xl relative"
+            className="bg-white border-4 border-yellow-500 rounded-2xl p-10 max-w-md text-center shadow-2xl relative"
             style={{
-              backgroundImage: "radial-gradient(circle, #ffffff, #f8f8f8)",
+              backgroundImage:
+                "radial-gradient(circle at top, #ffffff, #f9fafb)",
+              animation:
+                "popIn 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards",
             }}
           >
-            <div className="absolute -top-6 -right-6 bg-red-600 rounded-full p-4 w-12 h-12 flex items-center justify-center border-2 border-white">
-              <span className="text-white text-lg">♠</span>
+            <style jsx>{`
+              @keyframes popIn {
+                0% {
+                  transform: scale(0.9);
+                  opacity: 0;
+                }
+                100% {
+                  transform: scale(1);
+                  opacity: 1;
+                }
+              }
+              @keyframes float {
+                0%,
+                100% {
+                  transform: translateY(0);
+                }
+                50% {
+                  transform: translateY(-10px);
+                }
+              }
+              .floating-suit {
+                animation: float 3s ease-in-out infinite;
+              }
+            `}</style>
+
+            <div
+              className="absolute -top-7 -right-7 bg-gradient-to-br from-red-500 to-red-700 rounded-full p-4 w-14 h-14 flex items-center justify-center border-2 border-white shadow-xl floating-suit"
+              style={{ animationDelay: "0.2s" }}
+            >
+              <span className="text-white text-xl">♠</span>
             </div>
-            <div className="absolute -top-6 -left-6 bg-black rounded-full p-4 w-12 h-12 flex items-center justify-center border-2 border-white">
-              <span className="text-white text-lg">♣</span>
+            <div className="absolute -top-7 -left-7 bg-black rounded-full p-4 w-14 h-14 flex items-center justify-center border-2 border-white shadow-xl floating-suit">
+              <span className="text-white text-xl">♣</span>
             </div>
+
             <button
               onClick={closeWinnerPopup}
-              className="absolute top-2 right-2 text-gray-600 hover:text-red-700"
+              className="absolute top-2 right-2 text-gray-500 hover:text-red-700 transition-colors p-1 rounded-full hover:bg-gray-100"
             >
               <XMarkIcon className="w-6 h-6" />
             </button>
-            <h2 className="text-3xl font-bold mb-5 text-red-700">WINNER!</h2>
-            <div className="bg-emerald-800 rounded-lg p-6 mb-4 border-2 border-yellow-500 text-white">
-              <p className="text-2xl font-bold">
-                {winnerPopup.seed} {winnerPopup.name}
+
+            <h2 className="text-4xl font-bold mb-6 text-transparent bg-clip-text bg-gradient-to-r from-red-600 to-red-700">
+              WINNER!
+            </h2>
+
+            <div className="bg-gradient-to-b from-emerald-700 to-emerald-800 rounded-xl p-8 mb-6 border-2 border-yellow-500 text-white shadow-lg">
+              <div className="mb-1 text-yellow-300 text-sm font-medium uppercase tracking-wider">
+                Champion
+              </div>
+              <p className="text-3xl font-bold mb-2">
+                <span className="text-yellow-400 mr-2">{winnerPopup.seed}</span>
+                {winnerPopup.name}
               </p>
-              <div className="text-yellow-400 mt-2 text-lg">Takes the pot!</div>
-              <div className="flex justify-center mt-3 space-x-2">
+              <div className="text-yellow-300 mt-3 text-lg font-medium">
+                Takes the pot!
+              </div>
+              <div className="flex justify-center mt-4 space-x-4">
                 {["♠", "♥", "♦", "♣"].map((suit, i) => (
                   <span
                     key={i}
-                    className={i % 2 === 0 ? "text-white" : "text-red-400"}
+                    className={`text-2xl ${
+                      i % 2 === 0 ? "text-white" : "text-red-300"
+                    } floating-suit`}
+                    style={{ animationDelay: `${i * 0.2}s` }}
                   >
                     {suit}
                   </span>
                 ))}
               </div>
             </div>
+
             <button
               onClick={closeWinnerPopup}
-              className="mt-4 bg-red-700 text-white px-6 py-2 rounded-md hover:bg-red-800 font-bold shadow-lg"
+              className="mt-4 bg-gradient-to-b from-red-600 to-red-700 text-white px-8 py-3 rounded-lg font-bold shadow-lg hover:from-red-700 hover:to-red-800 transition-all duration-200"
             >
               New Game
             </button>
