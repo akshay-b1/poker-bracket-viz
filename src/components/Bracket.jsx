@@ -227,7 +227,7 @@ const Bracket = ({ data }) => {
                             </span>
                             {isPlayed && i === matchup.winner && (
                               <span className="text-yellow-600 font-bold text-sm">
-                                {team?.money} ♦ 
+                               ♦ 
                               </span>
                             )}
                           </div>

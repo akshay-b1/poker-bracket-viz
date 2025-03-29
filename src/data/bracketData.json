@@ -1,57 +1,377 @@
+ 
 {
-    "region": "South",
-    "rounds": [
-      {
-        "matchups": [
-          { "team1": { "name": "Auburn", "seed": 1, "money": "+100" }, "team2": { "name": "Delaware", "seed": 32, "money": "-100" }, "winner": 0 },
-          { "team1": { "name": "Miami", "seed": 16 }, "team2": { "name": "Drake", "seed": 17 }, "winner": 1 },
-          { "team1": { "name": "Indiana", "seed": 8 }, "team2": { "name": "UC Irvine", "seed": 25 }, "winner": 0 },
-          { "team1": { "name": "Iowa", "seed": 9 }, "team2": { "name": "Toledo", "seed": 24 }, "winner": 0 },
-          { "team1": { "name": "Michigan", "seed": 5 }, "team2": { "name": "Florida", "seed": 28 }, "winner": 0 },
-          { "team1": { "name": "Texas A&M", "seed": 12 }, "team2": { "name": "Boise State", "seed": 21 }, "winner": 0 },
-          { "team1": { "name": "Creighton", "seed": 4 }, "team2": { "name": "Santa Clara", "seed": 29 }, "winner": 0 },
-          { "team1": { "name": "Memphis", "seed": 13 }, "team2": { "name": "UCF", "seed": 20 }, "winner": 1 },
-          { "team1": { "name": "Duke", "seed": 2 }, "team2": { "name": "Vermont", "seed": 31 }, "winner": 0 },
-          { "team1": { "name": "Arizona St", "seed": 15 }, "team2": { "name": "Penn State", "seed": 18 }, "winner": 1 },
-          { "team1": { "name": "Texas", "seed": 7 }, "team2": { "name": "VCU", "seed": 26 }, "winner": 0 },
-          { "team1": { "name": "Missouri", "seed": 10 }, "team2": { "name": "Rutgers", "seed": 23 }, "winner": 1 },
-          { "team1": { "name": "Illinois", "seed": 6 }, "team2": { "name": "Syracuse", "seed": 27 }, "winner": 0 },
-          { "team1": { "name": "Oregon", "seed": 11 }, "team2": { "name": "Nevada", "seed": 22 }, "winner": 1 },
-          { "team1": { "name": "Kentucky", "seed": 3 }, "team2": { "name": "Montana", "seed": 30 }, "winner": 0 },
-          { "team1": { "name": "Ole Miss", "seed": 14 }, "team2": { "name": "New Mexico", "seed": 19 }, "winner": 1 }
-        ]
-      },
-      {
-        "matchups": [
-          { "team1": { "name": "Auburn", "seed": 1 }, "team2": { "name": "Drake", "seed": 17 }, "winner": 0 },
-          { "team1": { "name": "Indiana", "seed": 8 }, "team2": { "name": "Iowa", "seed": 9 }, "winner": 1 },
-          { "team1": { "name": "Michigan", "seed": 5 }, "team2": { "name": "Texas A&M", "seed": 12 }, "winner": 0 },
-          { "team1": { "name": "Creighton", "seed": 4 }, "team2": { "name": "UCF", "seed": 20 }, "winner": 0 },
-          { "team1": { "name": "Duke", "seed": 2 }, "team2": { "name": "Penn State", "seed": 18 }, "winner": 0 },
-          { "team1": { "name": "Texas", "seed": 7 }, "team2": { "name": "Rutgers", "seed": 23 }, "winner": 1 },
-          { "team1": { "name": "Illinois", "seed": 6 }, "team2": { "name": "Nevada", "seed": 22 }, "winner": 0 },
-          { "team1": { "name": "Kentucky", "seed": 3 }, "team2": { "name": "New Mexico", "seed": 19 }, "winner": 0 }
-        ]
-      },
-      {
-        "matchups": [
-          { "team1": { "name": "Auburn", "seed": 1 }, "team2": { "name": "Iowa", "seed": 9 }, "winner": 0 },
-          { "team1": { "name": "Michigan", "seed": 5 }, "team2": { "name": "Creighton", "seed": 4 }, "winner": 1 },
-          { "team1": { "name": "Duke", "seed": 2 }, "team2": { "name": "Rutgers", "seed": 23 }, "winner": 0 },
-          { "team1": { "name": "Illinois", "seed": 6 }, "team2": { "name": "Kentucky", "seed": 3 }, "winner": 1 }
-        ]
-      },
-      {
-        "matchups": [
-          { "team1": { "name": "Auburn", "seed": 1 }, "team2": { "name": "Creighton", "seed": 4 }, "winner": 0 },
-          { "team1": { "name": "Duke", "seed": 2 }, "team2": { "name": "Kentucky", "seed": 3 }, "winner": 1 }
-        ]
-      },
-      {
-        "matchups": [
-          { "team1": { "name": "Auburn", "seed": 1 }, "team2": { "name": "Kentucky", "seed": 3 }, "winner": 1 }
-        ]
-      }
-    ]
-  }
-  
+  "region": "Main",
+  "rounds": [
+    {
+      "matchups": [
+        {
+          "team1": {
+            "name": "B4G - Michael Taylor",
+            "seed": 1,
+            "money": "-485"
+          },
+          "team2": {
+            "name": "Bobby - David Roh",
+            "seed": 2,
+            "money": "-515"
+          },
+          "winner": 0
+        },
+        {
+          "team1": {
+            "name": "Bobby - David Roh(1)",
+            "seed": 3,
+            "money": "-500"
+          },
+          "team2": {
+            "name": "boker_bot - Joe Bray",
+            "seed": 4,
+            "money": "-500"
+          },
+          "winner": 1
+        },
+        {
+          "team1": {
+            "name": "bot_poker - Priyadarsi Mishra",
+            "seed": 5,
+            "money": "-13920"
+          },
+          "team2": {
+            "name": "cfr_bot - Hrudith Lakshminarasimman",
+            "seed": 6,
+            "money": "+12920"
+          },
+          "winner": 1
+        },
+        {
+          "team1": {
+            "name": "ctrl-alt-elite - Daniel Fuhrmann",
+            "seed": 7,
+            "money": "-38000"
+          },
+          "team2": {
+            "name": "Hinchogigem - David Fahim",
+            "seed": 8,
+            "money": "+37000"
+          },
+          "winner": 1
+        },
+        {
+          "team1": {
+            "name": "itspokahphil - Eric Liu",
+            "seed": 9,
+            "money": "+15260"
+          },
+          "team2": {
+            "name": "JohnStreet - Justus Languell",
+            "seed": 10,
+            "money": "-16260"
+          },
+          "winner": 0
+        },
+        {
+          "team1": {
+            "name": "luckson_bot - Jackson Weibel",
+            "seed": 11,
+            "money": "+37000"
+          },
+          "team2": {
+            "name": "Michael_PokerBot - Michael Taylor",
+            "seed": 12,
+            "money": "-38000"
+          },
+          "winner": 0
+        },
+        {
+          "team1": {
+            "name": "pokerIHardlyKnowHer - Allen Basil",
+            "seed": 13,
+            "money": "-32720"
+          },
+          "team2": {
+            "name": "python_skeleton - Jason Kim",
+            "seed": 14,
+            "money": "+31720"
+          },
+          "winner": 1
+        },
+        {
+          "team1": {
+            "name": "sounding-pokertry-bot - Tres Trevino",
+            "seed": 15,
+            "money": "+1230"
+          },
+          "team2": {
+            "name": "teamwinners - Yahia Ramadan",
+            "seed": 16,
+            "money": "-2230"
+          },
+          "winner": 0
+        },
+        {
+          "team1": {
+            "name": "The_Johnsons - David Arnold",
+            "seed": 17,
+            "money": "-51428"
+          },
+          "team2": {
+            "name": "yuzusoft - Yuzu \u201cuuz\u201d Shen",
+            "seed": 18,
+            "money": "+50428"
+          },
+          "winner": 1
+        },
+        {
+          "team1": {
+            "name": "RandomBot",
+            "seed": 19,
+            "money": "+49346"
+          },
+          "team2": {
+            "name": "V1Bot",
+            "seed": 20,
+            "money": "-50346"
+          },
+          "winner": 0
+        },
+        {
+          "team1": {
+            "name": "V2Bot",
+            "seed": 21,
+            "money": "-4765"
+          },
+          "team2": {
+            "name": "V3Bot",
+            "seed": 22,
+            "money": "+3765"
+          },
+          "winner": 1
+        },
+        {
+          "team1": {
+            "name": "V4Bot",
+            "seed": 23,
+            "money": "+13050"
+          },
+          "team2": {
+            "name": "V5Bot",
+            "seed": 24,
+            "money": "-14050"
+          },
+          "winner": 0
+        }
+      ]
+    },
+    {
+      "matchups": [
+        {
+          "team1": {
+            "name": "B4G - Michael Taylor",
+            "seed": 1,
+            "money": "-1506"
+          },
+          "team2": {
+            "name": "boker_bot - Joe Bray",
+            "seed": 2,
+            "money": "+506"
+          },
+          "winner": 1
+        },
+        {
+          "team1": {
+            "name": "cfr_bot - Hrudith Lakshminarasimman",
+            "seed": 3,
+            "money": "+2160"
+          },
+          "team2": {
+            "name": "Hinchogigem - David Fahim",
+            "seed": 4,
+            "money": "-3160"
+          },
+          "winner": 0
+        },
+        {
+          "team1": {
+            "name": "itspokahphil - Eric Liu",
+            "seed": 5,
+            "money": "+62795"
+          },
+          "team2": {
+            "name": "luckson_bot - Jackson Weibel",
+            "seed": 6,
+            "money": "-63795"
+          },
+          "winner": 0
+        },
+        {
+          "team1": {
+            "name": "python_skeleton - Jason Kim",
+            "seed": 7,
+            "money": "-78070"
+          },
+          "team2": {
+            "name": "sounding-pokertry-bot - Tres Trevino",
+            "seed": 8,
+            "money": "+77070"
+          },
+          "winner": 1
+        },
+        {
+          "team1": {
+            "name": "yuzusoft - Yuzu \u201cuuz\u201d Shen",
+            "seed": 9,
+            "money": "-285"
+          },
+          "team2": {
+            "name": "RandomBot",
+            "seed": 10,
+            "money": "-715"
+          },
+          "winner": 0
+        },
+        {
+          "team1": {
+            "name": "V3Bot",
+            "seed": 11,
+            "money": "+17775"
+          },
+          "team2": {
+            "name": "V4Bot",
+            "seed": 12,
+            "money": "-18775"
+          },
+          "winner": 0
+        },
+        {
+          "team1": {
+            "name": "adi_bot - Montgomery Bohde",
+            "seed": 13,
+            "money": "+4150"
+          },
+          "team2": {
+            "name": "adi_bot - Montgomery Bohde(1)",
+            "seed": 14,
+            "money": "-5150"
+          },
+          "winner": 0
+        },
+        {
+          "team1": {
+            "name": "appendix - Zachary Sanders",
+            "seed": 15,
+            "money": "+155164"
+          },
+          "team2": {
+            "name": "asd - AoD_ity",
+            "seed": 16,
+            "money": "-156164"
+          },
+          "winner": 0
+        }
+      ]
+    },
+    {
+      "matchups": [
+        {
+          "team1": {
+            "name": "boker_bot - Joe Bray",
+            "seed": 1,
+            "money": "-31562"
+          },
+          "team2": {
+            "name": "cfr_bot - Hrudith Lakshminarasimman",
+            "seed": 2,
+            "money": "+30562"
+          },
+          "winner": 1
+        },
+        {
+          "team1": {
+            "name": "itspokahphil - Eric Liu",
+            "seed": 3,
+            "money": "+47340"
+          },
+          "team2": {
+            "name": "sounding-pokertry-bot - Tres Trevino",
+            "seed": 4,
+            "money": "-48340"
+          },
+          "winner": 0
+        },
+        {
+          "team1": {
+            "name": "yuzusoft - Yuzu \u201cuuz\u201d Shen",
+            "seed": 5,
+            "money": "-119257"
+          },
+          "team2": {
+            "name": "V3Bot",
+            "seed": 6,
+            "money": "+118257"
+          },
+          "winner": 1
+        },
+        {
+          "team1": {
+            "name": "adi_bot - Montgomery Bohde",
+            "seed": 7,
+            "money": "-7366"
+          },
+          "team2": {
+            "name": "appendix - Zachary Sanders",
+            "seed": 8,
+            "money": "+6366"
+          },
+          "winner": 1
+        }
+      ]
+    },
+    {
+      "matchups": [
+        {
+          "team1": {
+            "name": "cfr_bot - Hrudith Lakshminarasimman",
+            "seed": 1,
+            "money": "-391455"
+          },
+          "team2": {
+            "name": "itspokahphil - Eric Liu",
+            "seed": 2,
+            "money": "+390455"
+          },
+          "winner": 1
+        },
+        {
+          "team1": {
+            "name": "V3Bot",
+            "seed": 3,
+            "money": "+323575"
+          },
+          "team2": {
+            "name": "appendix - Zachary Sanders",
+            "seed": 4,
+            "money": "-324575"
+          },
+          "winner": 0
+        }
+      ]
+    },
+    {
+      "matchups": [
+        {
+          "team1": {
+            "name": "itspokahphil - Eric Liu",
+            "seed": 1,
+            "money": "+35054"
+          },
+          "team2": {
+            "name": "V3Bot",
+            "seed": 2,
+            "money": "-36054"
+          },
+          "winner": 0
+        }
+      ]
+    }
+  ]
+}
